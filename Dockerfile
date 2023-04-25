@@ -8,7 +8,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential cmake libopenblas-dev liblapack-dev libx11-dev && \
+    apt-get install -y --no-install-recommends build-essential cmake libopenblas-dev liblapack-dev libx11-dev libgl1-mesa-glx && \
     rm -rf /var/lib/apt/lists/*
     
 # Install any needed packages specified in requirements.txt
