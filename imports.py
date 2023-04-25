@@ -137,9 +137,9 @@ def load_myAlexnet():
 
 def my_app(video_path, num_frame=0, frame_size=1020, box_size=800):
     start_time = time.time()
-    model = load_myAlexnet()
+#     model = load_myAlexnet()
     # model = load_efficientnet()
-    # model = load_alexnet()
+    model = load_alexnet()
     cap = cv2.VideoCapture(video_path)
     if num_frame == 0:
         num_frame = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
