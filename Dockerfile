@@ -7,6 +7,10 @@ WORKDIR /app
 # Copy the requirements.txt file to the working directory
 COPY requirements.txt .
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential cmake libopenblas-dev liblapack-dev libx11-dev && \
+    rm -rf /var/lib/apt/lists/*
+    
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
